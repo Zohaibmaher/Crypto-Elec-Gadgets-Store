@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Gadgets Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Crypto Gadgets Store</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Add to Cart</a></li>
+        </ul>
+    </nav>
+
+    <div class="slideshow-container">
+    <!-- Slides -->
+    <div class="slide fade">
+        <img src="images/featured1.jpg" alt="Featured Product 1">
+        <div class="text">Featured Product 1</div>
+    </div>
+
+    <div class="slide fade">
+        <img src="images/featured2.jpg" alt="Featured Product 2">
+        <div class="text">Featured Product 2</div>
+    </div>
+
+    <div class="slide fade">
+        <img src="images/featured3.jpg" alt="Featured Product 3">
+        <div class="text">Featured Product 3</div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</div>
+
+
+    <div class="products-grid">
+
+        <div class="product-item">
+    <div class="thumbnail-container" onclick="showProductGallery('Watch')">
+        <img src="images/watch-thumb1.jpg" alt="Watch">
+    </div>
+    <h3>Watch1</h3>
+    <p>Price: $300</p>
+    <button onclick="payWithUSD('Watch', 300)">Buy with USD</button>
+    <button onclick="payWithCrypto('Watch')">Pay with Crypto</button>
+</div>
+
+<!-- Product Gallery Modal -->
+<div id="product-gallery" class="gallery-modal">
+    <span class="close-btn" onclick="closeGallery()">&times;</span>
+    <div class="gallery-content">
+        <div class="main-image">
+            <img id="main-product-image" src="images/watch-thumb1.jpg" alt="Main Product Image">
+            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        </div>
+        <div class="thumbnails">
+            <img src="images/watch-thumb1.jpg" alt="Watch Thumbnail 1" onclick="setMainImage(0)">
+            <img src="images/watch-thumb2.jpg" alt="Watch Thumbnail 2" onclick="setMainImage(1)">
+            <img src="images/watch-thumb3.jpg" alt="Watch Thumbnail 3" onclick="setMainImage(2)">
+        </div>
+    </div>
+</div>
+<div class="product-item">
+    <div class="thumbnail-container" onclick="showProductGallery('Watch')">
+        <img src="images/watch-thumb1.jpg" alt="Watch">
+    </div>
+    <h3>Watch2</h3>
+    <p>Price: $300</p>
+    <button onclick="payWithUSD('Watch', 300)">Buy with USD</button>
+    <button onclick="payWithCrypto('Watch')">Pay with Crypto</button>
+</div>
+
+<!-- Product Gallery Modal -->
+<div id="product-gallery" class="gallery-modal">
+    <span class="close-btn" onclick="closeGallery()">&times;</span>
+    <div class="gallery-content">
+        <div class="main-image">
+            <img id="main-product-image" src="images/watch-thumb1.jpg" alt="Main Product Image">
+            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        </div>
+        <div class="thumbnails">
+            <img src="images/watch-thumb1.jpg" alt="Watch Thumbnail 1" onclick="setMainImage(0)">
+            <img src="images/watch-thumb2.jpg" alt="Watch Thumbnail 2" onclick="setMainImage(1)">
+            <img src="images/watch-thumb3.jpg" alt="Watch Thumbnail 3" onclick="setMainImage(2)">
+        </div>
+    </div>
+</div>
+<div class="product-item">
+    <div class="thumbnail-container" onclick="showProductGallery('Watch')">
+        <img src="images/watch-thumb1.jpg" alt="Watch">
+    </div>
+    <h3>Watch3</h3>
+    <p>Price: $300</p>
+    <button onclick="payWithUSD('Watch', 300)">Buy with USD</button>
+    <button onclick="payWithCrypto('Watch')">Pay with Crypto</button>
+</div>
+
+<!-- Product Gallery Modal -->
+<div id="product-gallery" class="gallery-modal">
+    <span class="close-btn" onclick="closeGallery()">&times;</span>
+    <div class="gallery-content">
+        <div class="main-image">
+            <img id="main-product-image" src="images/watch-thumb1.jpg" alt="Main Product Image">
+            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        </div>
+        <div class="thumbnails">
+            <img src="images/watch-thumb1.jpg" alt="Watch Thumbnail 1" onclick="setMainImage(0)">
+            <img src="images/watch-thumb2.jpg" alt="Watch Thumbnail 2" onclick="setMainImage(1)">
+            <img src="images/watch-thumb3.jpg" alt="Watch Thumbnail 3" onclick="setMainImage(2)">
+        </div>
+    </div>
+</div>
+       
+        <!-- Repeat similar blocks for other products -->
+    </div>
+
+    <footer>
+        <p>© 2024 Crypto Gadgets Store. All rights reserved.</p>
+    </footer>
+
+    <!-- Payment Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Choose Payment Method</h2>
+            <p id="product-name"></p>
+            <div id="payment-options">
+                <!-- This section will dynamically change based on user selection -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
