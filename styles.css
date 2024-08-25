@@ -68,30 +68,40 @@ nav ul.right {
 
 .search-bar {
     padding: 10px 20px;
-    padding-right: 40px; /* Space for the search icon */
+    padding-right: 60px; /* Increased space for the round search icon */
     border: none;
-    border-radius: 100px; /* Rounded corners */
+    border-radius: 100px; /* Rounded corners for the search bar */
     outline: none;
     font-size: 14px;
     height: 20px;
     width: 300px;
-    background-color: #FFFFFF; /* Light gray background for the search bar */
+    background-color: #130101; /* Dark background for the search bar */
     color: #333; /* Dark text color for readability */
 }
 
+/* Round Search Icon Container */
 .search-icon-container {
     position: absolute;
-    right: 30px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    background-color: #0056b3; /* Blue background for the search button */
+    border-radius: 50%; /* Makes the container round */
+    width: 40px; /* Adjust width and height to make a perfect circle */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Search Icon */
 .search-icon {
     width: 20px;
     height: 20px;
     filter: invert(100%); /* Ensure the icon is white */
 }
+
 
 /* Login Button Styling */
 .cta-button {
