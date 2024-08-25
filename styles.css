@@ -92,28 +92,6 @@ nav ul.right {
     height: 20px;
     filter: invert(100%); /* Ensure the icon is white */
 }
-/* Round Search Icon Container */
-.search-icon-container {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    background-color: #0056b3; /* Blue background for the search button */
-    border-radius: 50%; /* Makes the container round */
-    width: 40px; /* Adjust width and height to make a perfect circle */
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Search Icon */
-.search-icon {
-    width: 20px;
-    height: 20px;
-    filter: invert(100%); /* Ensure the icon is white */
-}
 
 
 /* Login Button Styling */
