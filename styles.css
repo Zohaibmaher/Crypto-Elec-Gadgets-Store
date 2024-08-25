@@ -76,7 +76,7 @@ nav ul.right {
     height: 20px;
     width: 300px;
     background-color: #130101; /* Light gray background for the search bar */
-    color: #333; /* Dark text color for readability */
+    color: #FFFFFF; /* Dark text color for readability */
 }
 
 .search-icon-container {
