@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+
+    <header>
+        <h1>Crypto Gadgets Store</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#" onclick="toggleCartPopup()">Cart <span id="cart-count" class="badge">0</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="product-details-container">
+        <div class="product-gallery">
+            <img id="main-product-image" src="images/default-product.jpg" alt="Main Product Image">
+            <div class="thumbnails">
+                <img src="images/thumb1.jpg" alt="Thumbnail 1" onclick="setMainImage(0)">
+                <img src="images/thumb2.jpg" alt="Thumbnail 2" onclick="setMainImage(1)">
+                <img src="images/thumb3.jpg" alt="Thumbnail 3" onclick="setMainImage(2)">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h2 id="product-title">Product Title</h2>
+            <p id="product-price">$50.00</p>
+            <p id="product-description">This is a detailed description of the product. It covers features, specifications, and more.</p>
+            <div class="product-rating">
+                <span id="product-rating">Rating: 4.5/5</span>
+                <span>(100 reviews)</span>
+            </div>
+            <div class="product-colors">
+                <label for="colors">Choose a color:</label>
+                <select id="colors">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <button onclick="addToCart('Watch1', 300)">Add to Cart</button>
+            <button onclick="buyNow('Watch1', 300)">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- Review and Rating Section -->
+    <div class="review-section">
+        <h2>Reviews</h2>
+        <div class="rating-container">
+            <h3>Rate this product:</h3>
+            <div class="stars" id="stars">
+                <span data-value="1">&#9733;</span>
+                <span data-value="2">&#9733;</span>
+                <span data-value="3">&#9733;</span>
+                <span data-value="4">&#9733;</span>
+                <span data-value="5">&#9733;</span>
+            </div>
+            <input type="hidden" id="rating-value" value="0">
+        </div>
+        <div class="review-form">
+            <h3>Write a Review:</h3>
+            <textarea id="review-text" placeholder="Write your review here..."></textarea><br>
+            <button onclick="submitReview()">Submit Review</button>
+        </div>
+        <div class="reviews">
+            <h3>All Reviews (<span id="review-count">0</span>)</h3>
+            <div id="reviews-list"></div>
+        </div>
+    </div>
+    
+     <!-- Cart Popup -->
+     <div id="cart-popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <span class="close-btn" onclick="toggleCartPopup()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+     <!-- Payment Popup -->
+     <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Choose Payment Method</h2>
+            <p id="product-name"></p>
+            <div id="payment-options">
+                <!-- Payment options will be dynamically injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 GadgetStore. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

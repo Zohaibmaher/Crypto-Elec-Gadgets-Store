@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Gadgets Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .news-ticker {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .news-ticker span {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Crypto Gadgets Store</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><button id="reelButton">WATCH REEL</button></li>
+            <li><a href="#" onclick="toggleCartPopup()">Cart <span id="cart-count" class="badge">0</span></a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <ul class="right">
+            <li class="search-form">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <span class="search-icon-container"><img src="c:\Users\ZOHAIB\Downloads\images.png" alt="Search" class="search-icon"></span>
+            </li>
+            <li>
+                <a href="login.html" class="cta-button">Login</a>
+            </li>
+             <!-- Reel Button -->
+             
+
+    
+        </ul>
+    </nav>
+       
+    <div class="news-ticker">
+        <span>Please note that all prices listed on our site are subject to change based on the fluctuations in cryptocurrency values. This means that the cost of items may vary according to the current exchange rate of the cryptocurrency being used for transactions.</span>
+    </div>
+    <!-- Reel Container -->
+</li><div id="reelContainer" class="hidden">
+    <video id="reelVideo" controls autoplay muted>
+        <source src="reel.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="reelButtons">
+        <div id="userInfo">
+            <img src="user-profile.jpg" alt="User Profile" id="userImage">
+            <span id="userName">John Doe</span>
+        </div>
+        <button id="shareButton">&#x1F4E3;</button>
+        <button id="buyNowButton" data-product-id="12346" data-product-url="index.html">&#x1F6D2;</button>
+
+    </div>
+</div> 
+
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="slide fade">
+            <img src="c:\Users\LA\Downloads\quino-al-xhGMQ_nYWqU-unsplash.jpg" alt="AirPods">
+            <div class="text">AirPods</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="c:\Users\LA\Downloads\phone.jpeg" alt="watch">
+            <div class="text">watch</div>
+        </div>
+
+        <div class="slide fade">
+            <img src="c:\Users\LA\Downloads\airpod.jpeg" alt="moble">
+            <div class="text">moble</div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-item" data-product-id="12345">
+            <div class="thumbnail-container" onclick="showProductGallery('Watch1')">
+                <img src="c:\Users\LA\Downloads\tablet.jpeg" alt="Watch1">
+            </div>
+            <h3>Watch1</h3>
+            <p>Price: $300</p>
+            <div class="rating">  
+                ★★★☆☆  </div>
+            <button onclick="addToCart('Watch1', 300)">Add to Cart</button>
+            <button onclick="buyNow('Watch1', 300)">Buy Now</button>
+        </div>
+
+        <div class="product-item" data-product-id="12346">
+            <div class="thumbnail-container" onclick="showProductGallery('Watch2')">
+                <img src="c:\Users\LA\Downloads\comp.jpeg" alt="Watch2">
+            </div>
+            <h3>Watch2</h3>
+            <p>Price: $300</p>
+            <div class="rating">  
+                ★★★☆☆  </div>
+            <button onclick="addToCart('Watch2', 300)">Add to Cart</button>
+            <button onclick="buyNow('Watch2', 300)">Buy Now</button>
+        </div>
+
+        <div class="product-item">
+            <div class="thumbnail-container" onclick="showProductGallery('Watch3')">
+                <img src="c:\Users\LA\Downloads\airpod.jpeg" alt="Watch3">
+            </div>
+            <h3>Watch3</h3>
+            <p>Price: $300</p>
+            <div class="rating">  
+                ★★★☆☆  </div>
+                <button onclick="addToCart('Watch2', 300)">Add to Cart</button>
+            <button onclick="buyNow('Watch3', 300)">Buy Now</button>
+        </div>
+        <div class="product-item">
+            <div class="thumbnail-container" onclick="showProductGallery('Watch3')">
+                <img src="c:\Users\LA\Downloads\airpod.jpeg" alt="Watch3">
+            </div>
+            <h3>Watch4</h3>
+            <p>Price: $300</p>
+            <div class="rating">  
+                ★★★☆☆  </div>
+                <button onclick="addToCart('Watch2', 300)">Add to Cart</button>
+            <button onclick="buyNow('Watch3', 300)">Buy Now</button>
+        </div>
+        <div class="product-item">
+            <div class="thumbnail-container" onclick="showProductGallery('Watch3')">
+                <img src="c:\Users\LA\Downloads\airpod.jpeg" alt="Watch3">
+            </div>
+            <h3>Watch5</h3>
+            <p>Price: $300</p>
+            <div class="rating">  
+                ★★★☆☆  </div>
+                <button onclick="addToCart('Watch2', 300)">Add to Cart</button>
+            <button onclick="buyNow('Watch3', 300)">Buy Now</button>
+        </div>
+     
+    </div>  
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <span class="close-btn" onclick="toggleCartPopup()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 GadgetStore. All rights reserved.</p>
+    </footer>
+    
+    <!-- Payment Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Choose Payment Method</h2>
+            <p id="product-name"></p>
+            <div id="payment-options">
+                <!-- Payment options will be dynamically injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Gallery Modal -->
+    <div id="product-gallery" class="gallery-modal">
+        <span class="close-btn" onclick="closeGallery()">&times;</span>
+        <div class="gallery-content">
+            <div class="main-image">
+                <img id="main-product-image" src="images/watch-thumb1.jpg" alt="Main Product Image">
+                <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                <a class="next" onclick="changeImage(1)">&#10095;</a>
+            </div>
+            <div class="thumbnails">
+                <img src="images/watch-thumb1.jpg" alt="Watch Thumbnail 1" onclick="setMainImage(0)">
+                <img src="images/watch-thumb2.jpg" alt="Watch Thumbnail 2" onclick="setMainImage(1)">
+                <img src="images/watch-thumb3.jpg" alt="Watch Thumbnail 3" onclick="setMainImage(2)">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
