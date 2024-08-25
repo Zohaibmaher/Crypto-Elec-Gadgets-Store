@@ -68,17 +68,30 @@ nav ul.right {
 
 .search-bar {
     padding: 10px 20px;
-    padding-right: 60px; /* Increased space for the round search icon */
+    padding-right: 40px; /* Space for the search icon */
     border: none;
-    border-radius: 100px; /* Rounded corners for the search bar */
+    border-radius: 100px; /* Rounded corners */
     outline: none;
     font-size: 14px;
     height: 20px;
     width: 300px;
-    background-color: #020000; /* Dark background for the search bar */
+    background-color: #020000; /* Light gray background for the search bar */
     color: #faf1f1; /* Dark text color for readability */
 }
 
+.search-icon-container {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%); /* Ensure the icon is white */
+}
 /* Round Search Icon Container */
 .search-icon-container {
     position: absolute;
