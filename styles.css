@@ -12,6 +12,30 @@ header {
     text-align: center;
     padding: 20px 0;
 }
+/*logo*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin-right: 20px; /* Adjust spacing between menu items */
+}
+
+ul li a {
+    text-decoration: none;
+    color: black; /* Change link color as needed */
+}
+
+ul li a img.logo {
+    height: 40px; /* Adjust logo height as needed */
+    width: auto;  /* Keep aspect ratio */
+    vertical-align: middle;
+}
+
 
 /* Navigation Bar Styling */
 nav {
@@ -487,87 +511,36 @@ a:hover {
 #reelButton:hover {
     background-color: #007bff;  
 }
-
-#reelContainer {
-    align-items: center;
-   
+.cart-link, .login-link {
     position: relative;
-    width: 100%;
-    max-width: 450px;
-    height: 600px;
-    margin-top: 20px;
-    background-color: #000;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    display: inline-block;
 }
 
-#reelVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+.cart-link i, .login-link i {
+    font-size: 24px; /* Adjust icon size as needed */
 }
 
-.reelButtons {
+#cart-count {
     position: absolute;
-    right: 10px;
-    bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    
-}
-
-/* User Info Styling */
-#userInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-#userImage {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-}
-
-#userName {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.reelButtons button {
-    padding: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #ff0050;
+    top: -10px; /* Adjust position */
+    right: -10px; /* Adjust position */
+    background-color: red; /* Badge background color */
     color: white;
-    border: none;
+    padding: 2px 6px;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(255, 0, 80, 0.5);
-    transition: all 0.3s ease;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block; /* Always display the count */
 }
 
-.reelButtons button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(255, 0, 80, 0.7);
+.cart-link span, .login-link span {
+    display: none; /* Hide the "Cart" and "Login" text */
 }
 
-.reelButtons button:active {
-    transform: scale(0.95);
+.login-link i {
+    font-size: 24px; /* Adjust icon size as needed */
 }
-
-.hidden {
-    display: none;
+.highlighted {
+    border: 2px solid #f39c12; /* Example highlight color */
+    background-color: #fff3cd; /* Light yellow background for highlight */
 }
