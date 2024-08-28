@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Gadgets Store</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .news-ticker {
             background-color: #333;
@@ -27,25 +29,42 @@
 <body>
     
     <header>
-        <h1>Crypto Gadgets Store</h1>
+        <h1>Welcome to Gadgets Store</h1>
+        <p>Your one-stop shop where you can buy the latest gadgets with cryptocurrency.</p>
     </header>
+    
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><button id="reelButton">WATCH REEL</button></li>
-            <li><a href="#" onclick="toggleCartPopup()">Cart <span id="cart-count" class="badge">0</span></a></li>
+            <li>
+                <a href="index.html">
+                    <img src="c:\Users\ZOHAIB\Downloads\letter-colorful-gradient-logo-design_474888-2226.avif" alt="Logo" class="logo">
+                </a>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="reel.html">Watch reel</a></li>
             <li><a href="about.html">About Us</a></li>
         </ul>
+        
         <ul class="right">
             <li class="search-form">
-                <input type="text" placeholder="Search..." class="search-bar">
-                <span class="search-icon-container"><img src="c:\Users\ZOHAIB\Downloads\images.png" alt="Search" class="search-icon"></span>
+                <input type="text" id="header-search-bar" placeholder="Search..." class="search-bar">
+                <span class="search-icon-container" id="header-search-button">
+                    <img src="c:\Users\ZOHAIB\Downloads\images.png" alt="Search" class="search-icon">
+                </span>
             </li>
             <li>
-                <a href="login.html" class="cta-button">Login</a>
+                <a href="#" onclick="toggleCartPopup()" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span id="cart-count" class="badge">0</span>
+                </a>
             </li>
-             <!-- Reel Button -->
+            <li>
+                <a href="login.html" class="login-link">
+                    <i class="fas fa-user"></i>
+                    <span id="login-text">Login</span>
+                </a>
+            </li>
              
 
     
@@ -55,22 +74,7 @@
     <div class="news-ticker">
         <span>Please note that all prices listed on our site are subject to change based on the fluctuations in cryptocurrency values. This means that the cost of items may vary according to the current exchange rate of the cryptocurrency being used for transactions.</span>
     </div>
-    <!-- Reel Container -->
-</li><div id="reelContainer" class="hidden">
-    <video id="reelVideo" controls autoplay muted>
-        <source src="reel.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="reelButtons">
-        <div id="userInfo">
-            <img src="user-profile.jpg" alt="User Profile" id="userImage">
-            <span id="userName">John Doe</span>
-        </div>
-        <button id="shareButton">&#x1F4E3;</button>
-        <button id="buyNowButton" data-product-id="12346" data-product-url="index.html">&#x1F6D2;</button>
 
-    </div>
-</div> 
 
     <div class="slideshow-container">
         <!-- Slides -->
@@ -98,7 +102,7 @@
     </div>
 
     <div class="products-grid">
-        <div class="product-item" data-product-id="12345">
+        <div class="product-item" data-product-id="12345" data-product-name="Watch1">
             <div class="thumbnail-container" onclick="showProductGallery('Watch1')">
                 <img src="c:\Users\LA\Downloads\tablet.jpeg" alt="Watch1">
             </div>
