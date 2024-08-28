@@ -329,24 +329,43 @@ function checkout() {
 }
 function searchProducts() {
     const searchQuery = document.querySelector('.search-bar').value.trim().toLowerCase();
-    const productItems = document.querySelectorAll('.product-item');
 
-    if (searchQuery) {
-        productItems.forEach(item => {
-            const productName = item.querySelector('h3').textContent.toLowerCase();
-            if (productName.includes(searchQuery)) {
-                item.style.display = '';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    } else {
-        productItems.forEach(item => {
-            item.style.display = '';
-        });
+    if (!searchQuery) {
+        // If the search query is empty, display an alert and return early
         alert('Please enter a search term.');
+        return;
+    }
+
+    const productItems = document.querySelectorAll('.product-item');
+    let productFound = false;
+
+    productItems.forEach(item => {
+        // Remove previous highlights
+        item.classList.remove('highlighted');
+
+        const productName = item.querySelector('h3').textContent.toLowerCase();
+        if (productName.includes(searchQuery)) {
+            item.style.display = ''; // Show the matched product
+            if (!productFound) {
+                // Highlight the first matched product
+                item.classList.add('highlighted');
+                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                productFound = true;
+            }
+        } else {
+            item.style.display = 'none'; // Hide non-matching products
+        }
+    });
+
+    if (!productFound) {
+        alert('No products found.');
     }
 }
+
+
+// Attach the function to the search icon
+document.querySelector('.search-icon-container').addEventListener('click', searchProducts);
+
 
 // Attach the function to the search icon
 document.querySelector('.search-icon-container').addEventListener('click', searchProducts);
@@ -354,48 +373,3 @@ document.getElementById('reelButton').addEventListener('click', function() {
     const reelContainer = document.getElementById('reelContainer');
     reelContainer.classList.toggle('hidden');
 });
-
-document.getElementById('shareButton').addEventListener('click', function() {
-    alert('Reel shared successfully!');
-    // Implement actual share functionality here.
-});
-
-document.getElementById('userInfo').addEventListener('click', function() {
-    alert('User Profile: John Doe\nEmail: johndoe@example.com');
-    // You could replace the alert with a modal or other UI element to display user details.
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var reelBuyNowButton = document.getElementById('buyNowButton');
-    var productItems = document.querySelectorAll('.product-item');
-    var productsGrid = document.querySelector('.products-grid');
-
-    reelBuyNowButton.addEventListener('click', function() {
-        var productId = this.getAttribute('data-product-id');
-
-        // Hide reel container and show product grid
-        document.getElementById('reelContainer').classList.add('hidden');
-        productsGrid.classList.remove('hidden');
-
-        // Find and highlight the product item with the matching ID
-        productItems.forEach(function(item) {
-            if (item.getAttribute('data-product-id') === productId) {
-                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                item.classList.add('highlight');
-            } else {
-                item.classList.remove('highlight');
-            }
-        });
-    });
-
-    // Optionally, add CSS to highlight the product
-    var style = document.createElement('style');
-    style.innerHTML = `
-        .highlight {
-            border: 2px solid red; /* Highlighting border */
-            background-color: #f0f0f0; /* Background color for highlighting */
-        }
-    `;
-    document.head.appendChild(style);
-});
-
